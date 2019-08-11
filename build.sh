@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 export TF_DIR="$(pwd)/terraform"
-export AWS_PROFILE=ltjjc
 export SITE_DIR="$(pwd)/src"
 cd_tf(){
     cd "${TF_DIR}"
@@ -21,11 +20,10 @@ push(){
     DOMAIN=$(terraform output -json | jq -r .website.value)
     aws s3 sync --delete "${SITE_DIR}" "s3://${DOMAIN}"
 }
-deploy(){
+deploy_infra(){
     cd_tf
     plan
     apply
-    push
 }
 
 dev(){
