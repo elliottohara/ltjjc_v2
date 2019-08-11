@@ -1,0 +1,20 @@
+version: "3.7"
+services:
+  static_site:
+    image: nginx
+    volumes:
+      - "./src:/usr/share/nginx/html"
+    ports:
+    - "8080:80"
+    environment:
+    - NGINX_PORT=80
+
+  gulp:
+    image: ellerbrock/alpine-gulp-sass:latest
+    volumes:
+      - ${DIR_SASS}:/src/sass
+      - ${DIR_CSS}:/src/css
+    environment:
+      - SASS=${FILES_SASS}
+      - CSS=${DIR_CSS}
+      - GULP_DEBUG=${GULP_DEBUG}
