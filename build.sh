@@ -3,23 +3,23 @@ export TF_DIR="$(pwd)/terraform"
 export SITE_DIR="$(pwd)/src"
 terraform_image="hashicorp/terraform:light"
 
-_run_terraform(){
+tf(){
     # Runs terraform in docker container
     docker run -i -t -v "${TF_DIR}:/tf" -w /tf "${terraform_image}" "${@}"
 }
 init() {
-    _run_terraform init
+    tf init
 
 }
 plan(){
-   _run_terraform plan
+   tf plan
 
 }
 apply(){
-    _run_terraform apply
+    tf apply
 }
 push(){
-    DOMAIN=$(terraform output -json | jq -r .website.value)
+    DOMAIN=$(tf output -json | jq -r .website.value)
     aws s3 sync --delete "${SITE_DIR}" "s3://${DOMAIN}"
 }
 deploy_infra(){

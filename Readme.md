@@ -17,5 +17,9 @@ running gulp watch to compile your scss to css)
 * run `./build.sh deploy` to create your aws resources and deploy
 
 
+## Terraform
+The build script allows you to run arbitrary terraform commands like so. `./build.sh tf <command> <args>`.
+For example `./build.sh show` would show all the resources that exist. 
+
 ## TODO Stuff
-* Still need local SSL. FB js sdk requires it, so might as well set it up
+* Still need local SSL. FB js sdk requires it, so might as well set it up, since I wanna use FB graph stuff on the page.
