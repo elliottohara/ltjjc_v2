@@ -6,6 +6,6 @@ data "aws_route53_zone" "zone"{
 }
 
 data "aws_acm_certificate" "cert"{
-  count = "${var.use_acm}"
-  domain = "${var.dns_name}"
+  count = "${var.use_acm ? 1: 0}"
+  domain = "${local.website_bucket}"
 }

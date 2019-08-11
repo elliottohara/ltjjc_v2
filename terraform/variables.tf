@@ -23,3 +23,6 @@ variable "dns_name" {
  variable "cloud_front_price_class" {
    default = "PriceClass_100"
  }
+ variable "default_root_document" {
+  default = "index.html"
+}
