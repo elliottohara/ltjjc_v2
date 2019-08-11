@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 export TF_DIR="$(pwd)/terraform"
 export SITE_DIR="$(pwd)/src"
+export AWS_PROFILE=ltjjc
 terraform_image="hashicorp/terraform:light"
 
 tf(){
