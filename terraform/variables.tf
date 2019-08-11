@@ -17,3 +17,9 @@ variable "aws_secret_key" {
 variable "dns_name" {
   default = ""
 }
+ variable "use_acm" {
+   default = false
+ }
+ variable "cloud_front_price_class" {
+   default = "PriceClass_100"
+ }

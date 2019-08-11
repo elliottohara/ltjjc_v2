@@ -25,3 +25,27 @@ EOF
   }
 
 }
+
+resource "aws_s3_bucket" "root" {
+  bucket = "${var.dns_name}"
+  acl    = "public-read"
+  policy = <<EOF
+{
+  "Version":"2012-10-17",
+  "Statement":[{
+	"Sid":"PublicReadGetObject",
+        "Effect":"Allow",
+	  "Principal": "*",
+      "Action":["s3:GetObject"],
+      "Resource":["arn:aws:s3:::${var.dns_name}/*"
+      ]
+    }
+  ]
+}
+EOF
+
+  website {
+    redirect_all_requests_to = "${aws_s3_bucket.website.bucket}"
+  }
+
+}
