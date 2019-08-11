@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-export STATE_FILE=plan.tfstate
 export TF_DIR="$(pwd)/terraform"
 export AWS_PROFILE=ltjjc
 export SITE_DIR="$(pwd)/src"
