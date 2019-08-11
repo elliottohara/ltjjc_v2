@@ -1,27 +1,28 @@
 #!/usr/bin/env bash
 export TF_DIR="$(pwd)/terraform"
 export SITE_DIR="$(pwd)/src"
-cd_tf(){
-    cd "${TF_DIR}"
+terraform_image="hashicorp/terraform:light"
+
+_run_terraform(){
+    # Runs terraform in docker container
+    docker run -i -t -v "${TF_DIR}:/tf" -w /tf "${terraform_image}" "${@}"
 }
 init() {
-    terraform init
+    _run_terraform init
 
 }
 plan(){
-    terraform plan
+   _run_terraform plan
 
 }
 apply(){
-    terraform apply
+    _run_terraform apply
 }
 push(){
-    cd_tf
     DOMAIN=$(terraform output -json | jq -r .website.value)
     aws s3 sync --delete "${SITE_DIR}" "s3://${DOMAIN}"
 }
 deploy_infra(){
-    cd_tf
     plan
     apply
 }
