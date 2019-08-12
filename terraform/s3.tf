@@ -25,7 +25,7 @@ EOF
   }
 
 }
-
+# Do we even need this if we're using Cloudfront?
 resource "aws_s3_bucket" "root" {
   bucket = "${var.dns_name}"
   acl    = "public-read"

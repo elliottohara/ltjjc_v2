@@ -12,7 +12,7 @@ variable "website_subdomain" {
 }
 
 variable "dns_name" {
-  description = "The DNS name of your website"
+  description = "The DNS name of your website. Should already have a AWS Route53 hosted zone set up for it."
   default = ""
 }
  variable "use_acm" {
@@ -26,4 +26,10 @@ variable "dns_name" {
  variable "default_root_document" {
   description = "Your default root document. "
    default = "index.html"
+}
+variable "aws_access_key" {
+  description = "Your aws access key. Populate this in secrets.auto.tfvars since that file is gitignored"
+}
+variable "aws_secret_key" {
+  description = "Your aws secret key. Populate this in secrets.auto.tfvars since that file is gitignored"
 }

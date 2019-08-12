@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
-# CHANGE ME to the the AWS cli profile you want to use in ~/.aws/credentials
-export AWS_PROFILE=ltjjc
-
-# Shouldn't need to change anything below here
 export TF_DIR="$(pwd)/terraform"
 export SITE_DIR="$(pwd)/src"
 terraform_image="hashicorp/terraform:light"
@@ -10,12 +6,9 @@ openssl_image="pgarrett/openssl-alpine"
 
 tf(){
     # Runs terraform in docker container
-    docker run -i -t -v "${TF_DIR}:/tf" -w /tf "${terraform_image}" "${@}"
+    docker run -i -t -v "${TF_DIR}:/tf"  -w /tf "${terraform_image}" "${@}"
 }
 init() {
-    echo "Generating Dev SSL Certs"
-    cert
-    echo "Initializing Terraform in ${TF_DIR}"
     tf
 }
 cert(){
@@ -37,6 +30,7 @@ deploy_infra(){
 }
 
 dev(){
+    cert
     docker-compose up
 }
 "${@:-}"

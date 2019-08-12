@@ -8,14 +8,20 @@ any static website we wanted to host on S3.
 Uses terraform for infrastructure, and openssl to generate dev SSL certs for testing. Nothing needs to be installed 
 locally except docker and docker-compose, since everything is done in docker containers.
 
-To use: 
+## To run locally: 
 * Clone the repo
-* Update the `AWS_PROFILE` variable on line 2 of `build.sh` to use a valid aws cli profile (probably can just be default
-for most)
-* Build your own website in the src directory
+* run `make local_dev` to get a dev server running locally. This will generate dev certs,  set up a gulp watcher and 
+start an nginx server hosting the contents of `src`. 
+* visit https://0.0.0.0
+* Make all the changes you want.
+
+## To deploy
+* You need to already have a AWS Route53 Hosted Zone set up for your domain.
+* Modify terraform.tfvars to appropriate values for your domain. 
+* If you have an ACM cert for the domain, and would like
+to use SSL, set `use_acm` to `true` and it will set up a cloudfront distribution with SSL redirect.
+* Create a secrets.auto.tfvars and set your `aws_access_key` and `awsaws_secret_key` with your credentials.
 * run `make init` to generate dev ssl certs and initialize terraform.
-* run `make local_dev` to get a dev server running locally (nginx docker image service files with another container
-running gulp watch to compile your scss to css)
 * Update `terraform/terraform.tfvars` to set your domain name (no need for the www)
 * run `./build.sh deploy` to create your aws resources and deploy
 
@@ -23,6 +29,3 @@ running gulp watch to compile your scss to css)
 ## Terraform
 The build script allows you to run arbitrary terraform commands like so. `./build.sh tf <command> <args>`.
 For example `./build.sh show` would show all the resources that exist. 
-
-## TODO Stuff
-* Still need local SSL. FB js sdk requires it, so might as well set it up, since I wanna use FB graph stuff on the page.
