@@ -4,7 +4,7 @@ services:
     build: .
     volumes:
       - "./src:/usr/share/nginx/html"
-      - "./Docker/ssl:/etc/ssl/"
+      - "./Docker/certs:/etc/ssl"
     ports:
     - "8080:80"
     - "443:443"

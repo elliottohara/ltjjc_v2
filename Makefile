@@ -8,3 +8,6 @@ deploy: infrastructure push
 
 local_dev:
 	./build.sh dev
+
+init:
+	./build.sh init

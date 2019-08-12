@@ -4,3 +4,4 @@ terraform/secrets.auto.tfvars
 terraform.tfstate
 terraform.tfstate.backup
 Docker/ssl/*
+Docker/certs/*
