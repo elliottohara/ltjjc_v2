@@ -5,7 +5,8 @@ watcher.
 Currently the src directory of this project is my Brazilian Jiu-Jitsu website, but it could be forked to create
 any static website we wanted to host on S3.
 
-Uses terraform for infrastructure, but does so in a docker container, so terraform need not be installed on host computer
+Uses terraform for infrastructure, and openssl to generate dev SSL certs for testing. Nothing needs to be installed 
+locally except docker and docker-compose, since everything is done in docker containers.
 
 To use: 
 * Clone the repo
