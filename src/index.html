@@ -10,9 +10,7 @@
     <meta content="website"          property="og:type" />
     <meta content="Your Website Title"         property="og:title" />
     <meta content="Lake Travis Jiu-Jitsu Club"   property="og:description" />
-    <!--
-    <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
-    -->
+    <meta property="og:image" content="https://www.ltjjc.com/images/logo.png" />
 
 
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
@@ -34,6 +32,28 @@
     <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
 
     <link href="css/style.css" rel="stylesheet">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "url": "http://www.ltjjc.com",
+  "name": "Lake Travis Jiu Jitsu Club.",
+  "email": "mailto:laketravisjjc@gmail.com",
+  "photo": "https://www.ltjjc.com/images/logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Spicewood",
+    "addressRegion": "TX",
+    "postalCode": "78669",
+    "streetAddress":  "21300 Hwy 71 West Suite 200"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-512-740-3921",
+    "contactType": "Customer service"
+  }
+}
+</script>
 
 
 </head>
@@ -93,53 +113,6 @@
 
 
         <div class="container">
-            <!--
-
-            <div class="row mb-5">
-                <div class="col-lg-3">
-
-                    <div class="counter d-flex align-items-start mb-5" data-aos="fade-up" data-aos-delay="">
-                        <div class="icon-wrap"><span class="flaticon-muscle text-primary"></span></div>
-                        <div class="counter-text">
-                            <strong>2,260</strong>
-                            <span>Members</span>
-                        </div>
-                    </div>
-
-
-                </div>
-                <div class="col-lg-3">
-                    <div class="counter d-flex align-items-start" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon-wrap"><span class="flaticon-stationary-bike text-primary"></span></div>
-                        <div class="counter-text">
-                            <strong>210</strong>
-                            <span>Daily Visitors </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-
-                    <div class="counter d-flex align-items-start mb-5" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon-wrap"><span class="flaticon-banana text-primary"></span></div>
-                        <div class="counter-text">
-                            <strong>887</strong>
-                            <span>Health Program</span>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-lg-3">
-                    <div class="counter d-flex align-items-start" data-aos="fade-up" data-aos-delay="300">
-                        <div class="icon-wrap"><span class="flaticon-heart text-primary"></span></div>
-                        <div class="counter-text">
-                            <strong>1,920</strong>
-                            <span>Heart Beat</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            -->
-
             <div class="row">
                 <div class="col-lg-5 mr-auto mb-5 align-self-center">
 
@@ -153,7 +126,7 @@
                             We have nightly classes in Brazilian Jiu-Jitsu for children and adults,
                             Mixed Martial arts, and Cardio Kickboxing. Come check us out!</p>
                         <p>
-                             Call us: <a href="tel:512-763-0684">(512) 763-0684</a>
+                             Call us: <a href="tel:+15127630684">(512) 763-0684</a>
                         </p>
                     </div>
                 </div>
@@ -350,11 +323,11 @@
                 </div>
             </div>
             <div class="row large-gutters">
-                <div class="col-md-6 person col-lg-4 mb-4 mb-lg-0" id="elliott_ohara">
-                    <img alt="Image" class="img-fluid mb-5" src="images/elliott_ohara.jpg">
-                    <h3>Elliott O'Hara</h3>
-                    <p class="mb-4 opacity-7">Head Coach and Owner<br />
-                        BJJ Brown Belt
+                <div class="col-md-6 person col-lg-4 mb-4 mb-lg-0" id="elliott_ohara" itemscope itemtype="http://data-vocabulary.org/Person">
+                    <img alt="Image" class="img-fluid mb-5" src="images/elliott_ohara.jpg" itemprop="photo">
+                    <h3 itemprop="name">Elliott O'Hara</h3>
+                    <p class="mb-4 opacity-7"><span itemprop="title">Head Coach and Owner</span><br />
+                        <span itemprop="title">BJJ Black Belt</span>
                     </p>
                     <p>
                         I found my love of Brazilian Jiu-Jitsu after watching Royce Gracie win UFC 1. I couldn't
@@ -386,22 +359,22 @@
 
                     </p>
                 </div>
-                <div class="col-md-6 person col-lg-4 mb-4 mb-lg-0 mt-5">
-                    <img alt="Image" class="img-fluid mb-5" src="images/eric_guerra.jpg">
-                    <h3>Eric Guerra</h3>
-                    <p class="mb-4 opacity-7">Kickboxing and Brazilian Jiu Jitsu<br />
-                    BJJ Purple Belt</p>
+                <div class="col-md-6 person col-lg-4 mb-4 mb-lg-0 mt-5" itemscope itemtype="http://data-vocabulary.org/Person">
+                    <img itemprop="photo" alt="Image" class="img-fluid mb-5" src="images/eric_guerra.jpg">
+                    <h3 itemprop="name">Eric Guerra</h3>
+                    <p class="mb-4 opacity-7"><span itemprop="title">Kickboxing and Brazilian Jiu Jitsu Coach</span><br />
+                        <span itemprop="title">BJJ Purple Belt</span></p>
                     <p>Coach Eric is a seasoned martial artist and very active in the local competitive martial
                     arts scene. Eric has been training in Brazilian Jiu-Jitsu under the tutelage of Head Instructor
                     Elliott O'Hara since early 2014. As fitness phenom, he heads up all our fitness classes, as
                     well as our kickboxing program and assists in all Brazilian Jiu Jitsu classes. LTJJC is proud
                     to have him as an instructor!</p>
                 </div>
-                <div class="col-md-6 person col-lg-4 mb-4 mb-lg-0">
-                    <img alt="Image" class="img-fluid mb-5" src="images/parker_ohara.jpg">
-                    <h3>Parker O'Hara</h3>
-                    <p class="mb-4 opacity-7">BJJ Intern<br />
-                        BJJ Yellow Belt</p>
+                <div class="col-md-6 person col-lg-4 mb-4 mb-lg-0" itemscope itemtype="http://data-vocabulary.org/Person">
+                    <img itemprop="photo" alt="Image" class="img-fluid mb-5" src="images/parker_ohara.jpg">
+                    <h3 itemprop="name">Parker O'Hara</h3>
+                    <p class="mb-4 opacity-7"><span itemprop="title">BJJ Intern</span><br />
+                        <span itemprop="title">BJJ Orange Belt</span></p>
                     <p>Parker O'Hara has been training in Brazilian Jiu-Jitsu since the age of 4. He's a student of the
                         sport, and brings a great energy to the kids classes, and as a teenager, his ability to relate
                         with students helps him explain concepts to less experienced students in ways they can
@@ -425,7 +398,8 @@
                         Suite 200<br />
                         Spicewood, TX, 78669<br />
                         </a>
-                        Tel: <a href="tel:512-763-0684">(512) 763-0684</a>
+                        Tel: <span itemprop="telephone"><a href="tel:+15127630684">(512) 763-0684</a></span><br />
+                        Email: <span itemprop="email"><a href="mailto:laketravisjjc@gmail.com">laketravisjjc@gmail.com </a></span>
                     </p>
                 </div>
                 <div class="col-md-4">

@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 export TF_DIR="$(pwd)/terraform"
 export SITE_DIR="$(pwd)/src"
+aws_profile="ltjjc"
+aws_credentials="${HOME}/.aws"
 terraform_image="hashicorp/terraform:light"
 openssl_image="pgarrett/openssl-alpine"
 
@@ -21,8 +23,10 @@ apply(){
     tf apply
 }
 push(){
-    DOMAIN=$(tf output -json | jq -r .website.value)
-    aws s3 sync --delete "${SITE_DIR}" "s3://${DOMAIN}"
+    domain=$(tf output -json | jq -r .website.value)
+    aws s3 sync --profile "${aws_profile}" --delete "${SITE_DIR}" "s3://${domain}"
+    #docker run -v "${aws_credentials}:/home/.aws":ro -v "${SITE_DIR}:/dist":ro -e "HOME=/home" "${terraform_image}" aws s3 sync --profile "${aws_profile}" --dry-run  /dist "s3:${domain}"
+
 }
 deploy_infra(){
     plan
